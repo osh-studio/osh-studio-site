@@ -22,10 +22,15 @@ function register($form) {
         error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
         success     : function(data) {
             if (data.result != "success") {
-                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                replaceSubmitWithMessage("something went wrong :(")
             } else {
-                // It worked, carry on...
+                replaceSubmitWithMessage("thank you :)")
             }
         }
     });
+}
+
+function replaceSubmitWithMessage(message) {
+    document.querySelector('#mc-embedded-subscribe').remove();
+    document.querySelector('#osh-message').innerHTML = message;
 }
