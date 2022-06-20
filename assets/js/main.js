@@ -6,7 +6,7 @@ $(document).ready( function () {
         $('form input[type="submit"]').bind('click', function ( event ) {
             if ( event ) event.preventDefault();
             // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
-            if ( validate_input($form) ) { register($form); }
+            register($form);
         });
     }
 });
